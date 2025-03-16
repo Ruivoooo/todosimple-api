@@ -12,7 +12,6 @@ import java.util.Objects;
 @Table(name = "task")
 public class Task {
 
-
     public static final String TABLE_NAME = "task";
 
 
