@@ -12,12 +12,11 @@ import lombok.*;
 @Table(name = "task")
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @EqualsAndHashCode
 public class Task {
 
     public static final String TABLE_NAME = "task";
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,4 +34,29 @@ public class Task {
     @NotEmpty
     @Size(min = 1, max = 255)
     private String description;
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public @NotNull @NotEmpty @Size(min = 1, max = 255) String getDescription() {
+        return description;
+    }
+
+    public void setDescription(@NotNull @NotEmpty @Size(min = 1, max = 255) String description) {
+        this.description = description;
+    }
 }
